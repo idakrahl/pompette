@@ -15,9 +15,32 @@ import Footer from "../components/Footer.astro";
   <body>
     <Header />
     <main>
-      <img src="public/Pompette_pig 3.png" alt="pompette_bottles" />
-    </main>
+      <h1>hej</h1>
+      <h1>hej</h1>
+      <h1>hej</h1>
+      <h1>hej</h1>
+      <h1>hej</h1>
 
+      <img id="my-image" class="rotate-image" src="public/Pompette_pig 3.png" alt="pompette_bottles" />
+      <h1>hej</h1>
+      <h1>hej</h1>
+      <h1>hej</h1>
+      <h1>hej</h1>
+      <h1>hej</h1>
+    </main>
     <Footer />
   </body>
 </html>
+<style>
+  .rotate-image {
+    transform-origin: center center;
+    transition: transform 0.2s;
+  }
+</style>
+<script>
+  window.addEventListener("scroll", function () {
+    var rotation = window.pageYOffset / 10; // Adjust the divisor to control the rotation speed
+    var image = document.getElementById("my-image");
+    image.style.transform = "rotate(" + rotation + "deg)";
+  });
+</script>
