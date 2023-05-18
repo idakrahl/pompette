@@ -39,7 +39,7 @@ import Footer from "../components/Footer.astro";
 </style>
 <script>
   window.addEventListener("scroll", function () {
-    var rotation = window.pageYOffset / 10; // Adjust the divisor to control the rotation speed
+    var rotation = window.pageYOffset / 5; // Adjust the divisor to control the rotation speed
     var image = document.getElementById("my-image");
     image.style.transform = "rotate(" + rotation + "deg)";
   });
