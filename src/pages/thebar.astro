@@ -26,6 +26,14 @@
 </div> -->
 <h2>“Keep it accessible for all people, keep it simple, and keep it at a good price” 
 </h1>
+<section class="center_grid">
+<div class="image_grid">
+    <img class="grid_images" src="../../public/thebar_1.jpg" alt="Girl enjoying wine and snacks">
+    <img class="grid_images" src="../../public/thebar_2.jpg" alt="Girls enjoying wine">
+    <img class="grid_images" src="../../public/thebar_3.jpg" alt="Girls enjoying wine outside">
+    <img class="grid_images" src="../../public/thebar_4.jpg" alt="Wine and flowers">
+</div>
+</section>
 </main>
 </body>
 
@@ -45,6 +53,8 @@ max-width: 100%;
 
 @media only screen and (max-width: 800px) {
 
+/* ------ Styling mobilview ------- */
+
 * {
 margin: 0;
 padding: 0;
@@ -59,7 +69,25 @@ padding: 5%;
 
 .winemenu{padding: 5%;}
 
+.center_grid {
+display: flex;
+justify-content: center;
+align-items: center;
 }
+
+.image_grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+max-width: 80%;
+}
+.grid_images{
+max-width: 100%;
+}
+
+}
+
+/* ------ Generel styling, skrifttyper osv. ------- */
 
 h1{font-family: athena,sans-serif;
 font-weight: 600;
