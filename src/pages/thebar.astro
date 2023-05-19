@@ -13,21 +13,24 @@
 <body>
     <main>
         <div class="banner">
-        <h1>The Bar </h1>
+        <div>
+        <h1>The Bar</h1>
         <p> Located in the heart of Denmark, Pompette offers a captivating atmosphere where wine enthusiasts can indulge in a carefully curated selection of exceptional wines. The warm and inviting ambiance, combined with attentive service, creates an enchanting space where guests can enjoy their favorite wines or explore new and exciting flavors. Whether you're seeking a memorable evening out or a place to unwind with friends, Pompette promises an extraordinary experience for all wine lovers.</p>
+    </div>
         <img class="thebar" src="../../public/TheBar-Image.png" alt="Image inside the wine bar" />
     </div>
     <div class="winemenu">
+<div class="col_1_1">
+<div>
 <h1>Wine and Menu</h1>
 <p>Discover a world of flavors through our carefully curated wines at our wine bar. From bold reds to crisp whites and everything in between. Accompanying the exceptional wines is a small, but very tasty, menu designed to enhance the tasting experience, featuring artisanal cheeses, charcuterie boards, and delectable tapas inspired by global cuisines. Whether you're a wine connoisseur or a curious beginner, Pompette offers an unforgettable journey of taste and pleasure.</p>
-</div>
+<p>Interested in this month’s favorites? We got you covered. </p>
 <button>Tell me more</button>
-<!-- <div class="tellmemore_button">
-<a href="">Tell me more</a>
-</div> -->
-<div>
+</div>
+<div class="quote">
 <img class="citation" src="../../public/citation.png" alt="">
-<h2>“Keep it accessible for all people, keep it simple, and keep it at a good price”</h2>
+<h2>“Pompette is all about wine for the people. Whether you’re a hard-core natural wine nerd or simply curious, we have something for you.”</h2>
+</div>
 </div>
 <section class="center_grid">
 <div class="image_grid">
@@ -54,9 +57,9 @@ background-repeat: no-repeat;
 max-width: 100%;
 } */
 
-@media only screen and (max-width: 800px) {
-
 /* ------ Styling mobilview ------- */
+
+@media only screen and (max-width: 800px) {
 
 * {
 margin: 0;
@@ -94,25 +97,66 @@ padding-left: 5%;
 
 }
 
+/* ------ Styling desktop ------- */
+
+@media only screen and (min-width: 800px) {
+
+.banner {
+background-color:#F3F3EB;
+padding: 5%;
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.thebar{max-width: 90%;}
+
+.col_1_1{
+display: grid;
+grid-template-columns: 1fr 1fr;
+padding: 5%;
+margin: 0 auto;
+margin-bottom: 5%;
+gap: 45px;
+width: 1000px;
+}
+
+.quote{margin-top: 10%;}
+
+.center_grid {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.image_grid{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+gap: 30px;
+max-width: 70%;
+}
+
+.grid_images{max-width: 100%;}
+
+}
+
 /* ------ Generel styling, skrifttyper osv. ------- */
 
 h1{font-family: athena,sans-serif;
 font-weight: 600;
 font-style: normal;
 font-size: 45px;
+margin-bottom: 3%;
 }
 
 h2 {font-family: athena,sans-serif;
 font-weight: 300;
 font-style: normal;
-font-size: 30px;
+font-size: 25px;
 color: #FF0000;
 padding-left: 5%;
 padding-right: 5%;
 padding-bottom: 5%;
 }
-
-
 
 p {font-family: century-gothic,sans-serif;
 font-weight: 400;
