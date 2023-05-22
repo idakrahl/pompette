@@ -17,7 +17,7 @@ import Footer from "../components/Footer.astro";
     <Header />
     <main>
       <div class="grid">
-        <p class="aabningstider">Open Daily <br /> 12:00-00:00</p>
+        <p class="aabningstider">Open Daily <br /> 12:00-00:00 <br /> <span class="nores"> No reservations</span></p>
 
         <p class="no_res">No reservations</p>
 
@@ -32,20 +32,26 @@ import Footer from "../components/Footer.astro";
       <img id="my-image" class="rotate-image" src="/Pompette_pig 3.png" alt="pompette_bottles" />
       <div class="grid_desktop">
         <div>
-          <div class="grid_1-1">
-            <img class="insta1" src="/insta1.png" alt="instagram" />
-            <img class="insta2" src="/insta2.png" alt="instagram" />
-          </div>
-          <div class="grid_1-1">
-            <img class="insta3" src="/insta3.png" alt="instagram" />
-            <img class="insta4" src="/insta4.png" alt="instagram" />
-          </div>
+          <a target="_blank" href="https://www.instagram.com/pompettecph/">
+            <div class="grid_1-1">
+              <img class="insta1" src="/insta1.png" alt="instagram" />
+              <img class="insta2" src="/insta2.png" alt="instagram" />
+            </div>
+          </a>
+          <a target="_blank" href="https://www.instagram.com/pompettecph/">
+            <div class="grid_1-1">
+              <img class="insta3" src="/insta3.png" alt="instagram" />
+              <img class="insta4" src="/insta4.png" alt="instagram" />
+            </div>
+          </a>
         </div>
         <div>
           <h1 class="feeling">Feeling <em>"Pompette"</em>?</h1>
           <div class="image-container">
-            <img class="insta_knap" src="/insta_knap.png" alt="instagram" />
-            <img class="hover" src="/insta_knap_hover.png" alt="instagram" />
+            <a target="”_blank”" href="https://www.instagram.com/pompettecph/">
+              <img class="hover" src="/insta_knap_hover.svg" alt="instagram" />
+              <img class="insta_knap" src="/insta_knap.svg" alt="instagram" />
+            </a>
           </div>
         </div>
       </div>
@@ -67,8 +73,8 @@ import Footer from "../components/Footer.astro";
       .rotate-image {
         transform-origin: center center;
         transition: transform 0.2s;
-        margin: 3% 0% 10% 15%;
-        width: 70%;
+        margin: -5% 0% 10% 20%;
+        width: 60%;
       }
       .rotate-image2 {
         display: none;
@@ -86,8 +92,7 @@ import Footer from "../components/Footer.astro";
         z-index: -1;
       }
       .no_res {
-        grid-column: 1;
-        margin-top: -23%;
+        display: none;
       }
       .aabningstider {
         grid-column: 1;
@@ -194,18 +199,19 @@ import Footer from "../components/Footer.astro";
       .grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-
         text-align: center;
         background-color: #f3f3eb;
         font-family: century-gothic, sans-serif;
-        font-weight: 400;
-        font-style: normal;
         padding: 1%;
         line-height: 1.5em;
         z-index: -1;
+        margin-left: -5%;
       }
       .no_res {
         margin-top: 7%;
+      }
+      .nores {
+        display: none;
       }
       .aabningstider {
         margin-top: 5%;
@@ -232,7 +238,7 @@ import Footer from "../components/Footer.astro";
         text-align: center;
       }
       .brodtekst {
-        margin: 0% 10% 0% 10%;
+        margin: 0% 25% 0% 25%;
         line-height: 1.5em;
       }
       .grid_desktop {
@@ -241,6 +247,9 @@ import Footer from "../components/Footer.astro";
       }
       img {
         max-width: 100%;
+      }
+      a {
+        text-decoration: none;
       }
       .insta1,
       .insta3 {
@@ -323,8 +332,8 @@ import Footer from "../components/Footer.astro";
         margin-left: 5%;
       }
       .brodtekst2 {
-        font-size: 22px;
-        margin: 5% 25% 5% 25%;
+        margin: 5% 30% 5% 30%;
+
         line-height: 1.5em;
       }
       .rotate-image {
