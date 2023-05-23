@@ -1,27 +1,36 @@
 <nav class="navbar">
-  <img src="/logo_roed.png" alt="pompette" />
-  <ul>
-    <li>
+  <a href="/">
+    <img src="/logo_roed.png" alt="pompette" />
+  </a>
+  <ul class="nav-menu">
+    <li class="nav-item">
       <div class="dropdown">
-        <button class="dropbtn"> <a href="">Shop</a></button>
+        <button class="dropbtn"> <a href="/listeview">Shop</a></button>
         <div class="dropdown-content">
-          <a href="">Wine</a>
-          <a href="">Not wine</a>
+          <a href="/listeview">Wine</a>
+          <a href="/listeview">Not wine</a>
         </div>
       </div>
     </li>
-    <li>
-      <a href="">The Bar</a>
+    <li class="nav-item">
+      <a href="/thebar">The Bar</a>
     </li>
-    <div class="dropdown">
-      <button class="dropbtn"> <a href="">About Us</a></button>
-      <div class="dropdown-content">
-        <a href="">The Concept</a>
-        <a href="">The Winemakers</a>
-        <a href="">The People</a>
+    <li class="nav-item">
+      <div class="dropdown">
+        <button class="dropbtn"> <a href="/aboutus">About Us</a></button>
+        <div class="dropdown-content">
+          <a href="/aboutus">The Concept</a>
+          <a href="/aboutus">The Winemakers</a>
+          <a href="/aboutus">The People</a>
+        </div>
       </div>
-    </div>
+    </li>
   </ul>
+  <div class="hamburger">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
 </nav>
 
 <style>
@@ -38,14 +47,16 @@
     padding: 2em;
   }
   img {
-    width: 25%;
+    width: 20%;
+    margin-top: -2%;
   }
 
   ul {
     display: flex;
     list-style: none;
     justify-content: space-between;
-    margin-right: 5%;
+    margin-right: 15%;
+    margin-top: 3%;
   }
 
   a {
@@ -54,6 +65,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 300;
     font-size: 16px;
+    line-height: 1.5;
   }
   a:hover {
     color: black;
@@ -61,8 +73,9 @@
   /* Dropdown Button */
   .dropbtn {
     color: #ff0000;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
+    font-family: century-gothic, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     border: none;
     background-color: white;
     font-size: 16px;
@@ -81,7 +94,6 @@
     color: rgb(195, 195, 195);
     text-decoration: none;
     display: block;
-    margin-left: 1%;
   }
 
   .dropdown-content a:hover {
@@ -91,17 +103,80 @@
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .hamburger {
+    display: none;
+  }
+
+  .bar {
+    display: block;
+    width: 35px;
+    height: 2px;
+    margin: 7px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #ff0000;
+  }
+  @media only screen and (max-width: 700px) {
+    img {
+      width: 60%;
+    }
+    .nav-menu {
+      position: fixed;
+      left: -150%;
+      top: 1rem;
+      flex-direction: column;
+      background-color: #f3f3eb;
+      width: 100%;
+      text-align: center;
+      transition: 0.3s;
+    }
+    .dropbtn {
+      background-color: #f3f3eb;
+    }
+    .nav-menu.active {
+      left: 0;
+    }
+
+    .nav-item {
+      margin: 2rem 5rem 1rem 0rem;
+    }
+
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      margin-top: 5%;
+      margin-left: 50%;
+    }
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
 </style>
 <script>
-  // JavaScript to add/remove a CSS class for sticky behavior
-  window.addEventListener("scroll", function () {
-    var navbar = document.querySelector(".navbar");
-    var scrollPosition = window.pageYOffset;
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
 
-    if (scrollPosition > 0) {
-      navbar.classList.add("sticky");
-    } else {
-      navbar.classList.remove("sticky");
-    }
-  });
+  hamburger.addEventListener("click", mobileMenu);
+
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+
+  const navLink = document.querySelectorAll(".nav-link");
+
+  navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
 </script>
