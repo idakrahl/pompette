@@ -1,0 +1,136 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/sit4hmp.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/sit4hmp.css" />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <div class="banner">
+        <h1>Favorite flavors of the month</h1>
+        <p>Every month, we pick out our favorite flavors of each grape and share why we love it. That way, you know exactly which drink you should go for when you visit us.</p>
+      </div>
+      <img class="blomst_splash" src="/blomstersplash_red.png" alt="Image inside the wine bar" />
+
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </main>
+    <Footer />
+  </body>
+</html>
+<style>
+  @media only screen and (max-width: 700px) {
+    .banner {
+      background-color: #f3f3eb;
+      padding: 0.5% 5% 35% 5%;
+      z-index: -1;
+    }
+
+    .blomst_splash {
+      max-width: 75%;
+      margin-left: 5%;
+      margin-bottom: -2%;
+      z-index: 1;
+      margin-top: -34%;
+    }
+
+    h1 {
+      font-family: athena, sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 45px;
+      margin-bottom: 3%;
+      line-height: 1em;
+    }
+
+    h2 {
+      font-family: athena, sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 25px;
+      line-height: 1.5em;
+      color: #ff0000;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 5%;
+    }
+
+    p {
+      font-family: century-gothic, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.5em;
+    }
+  }
+  @media only screen and (min-width: 700px) {
+    .banner {
+      padding: 2% 0% 7% 5%;
+      background-color: #f3f3eb;
+      z-index: -1;
+      margin-top: 3%;
+    }
+    .banner p {
+      margin-right: 60%;
+      margin-top: -1em;
+    }
+    .banner h1 {
+      margin-right: 65%;
+    }
+
+    .blomst_splash {
+      max-width: 40%;
+      z-index: 1;
+      position: absolute;
+      margin-top: -26.5%;
+      margin-left: 45%;
+    }
+
+    h1 {
+      font-family: athena, sans-serif;
+      font-weight: 600;
+      font-style: normal;
+      font-size: 45px;
+      margin-bottom: 3%;
+      line-height: 1.2em;
+    }
+
+    h2 {
+      font-family: athena, sans-serif;
+      font-weight: 300;
+      font-style: normal;
+      font-size: 25px;
+      line-height: 1.5em;
+      color: #ff0000;
+      padding-left: 5%;
+      padding-right: 5%;
+      padding-bottom: 5%;
+    }
+
+    p {
+      font-family: century-gothic, sans-serif;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 14px;
+      margin-bottom: 15px;
+      line-height: 1.5em;
+    }
+  }
+</style>
