@@ -2,110 +2,183 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 ---
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/ncl1pci.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/ncl1pci.css" />
     <title>Singleview</title>
   </head>
- <Header></Header>
- 
-    <main>
-      <a href="listeview.astro" class="product">BACK</a>
-      <div class="grid2">
-        <div>
-          <img
-            src="public/rød.jpg"
-            alt="rød"
-            id="images"
-          />
-        </div>
-        <div>
-          <section class="purchaseBox">
-                <h1>Overskrift</h1>
-                <p class="price">Pris: $X</p>
-                <p class="description">Beskrivelse: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                <p>Vintage:</p>
-                <p>Grape(s):</p>
-                <p>Region:</p>
-                <p>Country:</p>
-                <p>Colour:</p>
-                <p>Type:</p>
-                <p>Size:</p>   
-            <a href="" class="btn">Add to basket</a>
-          </section>
-        </div>
+  <Header />
+  <main>
+    <a href="listeview.astro" class="product"> ← BACK</a>
+    <h1>Overskrift</h1>
+    <div class="grid2">
+      <img src="public/rød1.jpg" alt="rød1" id="images_lille" />
+      <img src="public/rød.jpg" alt="rød" id="images" />
+      <div>
+        <section class="purchaseBox">
+          <h2 class="price">Pris: $X</h2>
+          <p class="description">Beskrivelse: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Vintage:</p>
+          <p>Grape(s):</p>
+          <p>Region:</p>
+          <p>Country:</p>
+          <p>Colour:</p>
+          <p>Type:</p>
+          <p>Size:</p>
+          <div class="image-container">
+            <img class="hover" src="/add_knap_hover.svg" alt="instagram" />
+            <img class="insta_knap" src="/add_knap.svg" alt="instagram" />
+          </div>
+        </section>
       </div>
-</main>
-<Footer></Footer>
-<script>
-function changeImage(imageSrc) {
-    var mainImage = document.getElementById('main-image');
-    // mainImage.src = imageSrc;
-  }
-</script>
-<style>
-   body{
-    font-family: Poppins;
-   }
-   h1{color: red;}
-img{width:50%;}
-.btn {
-  display: inline-block;
-  background: red;
-  color: white;
-  padding: 8px 30px;
-  margin: 30px 0;
-  border-radius: 30px;
-  transition: background 0.5s;
-}
-.btn:hover {
-  background: black;
-}
+    </div>
+  </main>
+  <Footer />
+  <script>
+    function changeImage(imageSrc) {
+      var mainImage = document.getElementById("main-image");
+      // mainImage.src = imageSrc;
+    }
+  </script>
+  <style>
+    body {
+      font-family: Poppins;
+    }
 
-.grid2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 50px;
-}
-.grid2 img {
-  width: 100%;
-}
-.price {
-  font-weight: bold;
-}
-.product {
-  margin-left: 80px;
-  font-size: 10px;
-  margin-top: 20px;
-}
-.description {
-  margin-top: 10px;
-}
+    h1 {
+      color: red;
+      font-size: 45px;
+      line-height: 1.5em;
+      margin-left: 2.5%;
+      margin-bottom: -2%;
+      margin-top: 0%;
+      font-family: "athena", sans-serif;
+    }
+    #images {
+      width: 70%;
+      margin-left: 2%;
+    }
+    #images_lille {
+      width: 100%;
+    }
+    .btn {
+      display: inline-block;
+      background: red;
+      color: white;
+      padding: 8px 30px;
+      margin: 30px 0;
+      border-radius: 30px;
+      transition: background 0.5s;
+    }
+    .btn:hover {
+      background: black;
+    }
 
-/* Media Queries */
-    @media only screen and (max-width: 800px) {
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 3fr 3fr;
+      gap: 20px;
+      padding: 50px;
+      font-size: 14px;
+      line-height: 1.5em;
+      font-family: century-gothic, sans-serif;
+      margin-left: -1.5%;
+    }
+    .grid2 img {
+      width: 100%;
+    }
+    .price {
+      font-family: "athena", sans-serif;
+      color: red;
+      font-size: 25px;
+    }
+    .product {
+      margin-left: 35px;
+      font-size: 14px;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.526);
+      font-family: century-gothic, sans-serif;
+    }
+    .product:hover {
+      color: red;
+    }
+    .description {
+      margin-top: 10px;
+    }
+    .image-container {
+      position: relative;
+      width: 170px;
+      height: 140px;
+      margin: 4% 0% 0% 0%;
+      cursor: pointer;
+    }
+    .purchaseBox {
+      margin-left: -20%;
+      margin-top: -4%;
+    }
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
 
-  .grid2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media only screen and (max-width: 600px) {
-  .row {
-    text-align: center;
-  }
-  .col-2 {
-    flex-basis: 100%;
-  }
-  .grid2 {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
- 
-}
-</style>
+    .image-container img:hover {
+      opacity: 0;
+    }
+
+    .image-container .hover-image {
+      display: none;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .image-container:hover .hover-image {
+      display: block;
+    }
+
+    /* Media Queries */
+
+    @media only screen and (max-width: 700px) {
+      h1 {
+        margin-left: 2%;
+        margin-bottom: -7%;
+      }
+      .product {
+        margin-left: 10px;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        margin-left: -10%;
+      }
+      #images {
+        width: 140%;
+        margin-left: -25%;
+      }
+      #images_lille {
+        width: 70%;
+      }
+      .purchaseBox {
+        margin-left: 2%;
+      }
+      .description {
+        margin-right: -200px;
+      }
+      .image-container {
+        width: 140px;
+        height: 110px;
+      }
+    }
+  </style>
+
+
+</html>

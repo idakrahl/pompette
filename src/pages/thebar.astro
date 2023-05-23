@@ -19,27 +19,27 @@ import Footer from "../components/Footer.astro";
     <Header />
     <main>
       <div class="banner">
-        <div>
-          <h1>The Bar</h1>
-          <p>
-            Located in the heart of Denmark, Pompette offers a captivating atmosphere where wine enthusiasts can indulge in a carefully curated selection of exceptional wines. The warm and inviting ambiance, combined with attentive service, creates
-            an enchanting space where guests can enjoy their favorite wines or explore new and exciting flavors. Whether you're seeking a memorable evening out or a place to unwind with friends, Pompette promises an extraordinary experience for all
-            wine lovers.
-          </p>
-        </div>
-        <img class="thebar" src="../../public/TheBar-Image.png" alt="Image inside the wine bar" />
+        <h1>The Bar</h1>
+        <p>
+          Located in the heart of Denmark, Pompette offers a captivating atmosphere where wine enthusiasts can indulge in a carefully curated selection of exceptional wines. The warm and inviting ambiance, combined with attentive service, creates an enchanting space where guests can enjoy their
+          favorite wines or explore new and exciting flavors. Whether you're seeking a memorable evening out or a place to unwind with friends, Pompette promises an extraordinary experience for all wine lovers.
+        </p>
       </div>
+      <img class="thebar" src="../../public/TheBar-Image.png" alt="Image inside the wine bar" />
+
       <div class="winemenu">
         <div class="col_1_1">
           <div>
             <h1>Wine and Menu</h1>
             <p>
-              Discover a world of flavors through our carefully curated wines at our wine bar. From bold reds to crisp whites and everything in between. Accompanying the exceptional wines is a small, but very tasty, menu designed to enhance the
-              tasting experience, featuring artisanal cheeses, charcuterie boards, and delectable tapas inspired by global cuisines. Whether you're a wine connoisseur or a curious beginner, Pompette offers an unforgettable journey of taste and
-              pleasure.
+              Discover a world of flavors through our carefully curated wines at our wine bar. From bold reds to crisp whites and everything in between. Accompanying the exceptional wines is a small, but very tasty, menu designed to enhance the tasting experience, featuring artisanal cheeses,
+              charcuterie boards, and delectable tapas inspired by global cuisines. Whether you're a wine connoisseur or a curious beginner, Pompette offers an unforgettable journey of taste and pleasure.
             </p>
             <p>Interested in this month’s favorites? We got you covered.</p>
-            <button>Tell me more</button>
+            <div class="image-container">
+              <img class="hover" src="/tell_me_more_knap_hover.svg" alt="instagram" />
+              <img class="insta_knap" src="/tell_me_more_knap.svg" alt="instagram" />
+            </div>
           </div>
           <div class="quote">
             <img class="citation" src="../../public/citation.png" alt="" />
@@ -73,19 +73,19 @@ max-width: 100%;
 
       /* ------ Styling mobilview ------- */
 
-      @media only screen and (max-width: 800px) {
-        * {
-          margin: 0;
-          padding: 0;
-        }
-
+      @media only screen and (max-width: 700px) {
         .banner {
           background-color: #f3f3eb;
           padding: 5%;
+          z-index: -1;
+          padding-bottom: 30%;
         }
 
         .thebar {
-          max-width: 100%;
+          max-width: 90%;
+          margin-left: 5%;
+          z-index: 1;
+          margin-top: -25%;
         }
 
         .winemenu {
@@ -111,30 +111,72 @@ max-width: 100%;
         .citation {
           padding-left: 5%;
         }
+        .image-container {
+          position: relative;
+          width: 170px;
+          height: 140px;
+          margin: 5% 0% 10% 25%;
+          cursor: pointer;
+        }
+
+        .image-container img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+
+        .image-container img:hover {
+          opacity: 0;
+        }
+
+        .image-container .hover-image {
+          display: none;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .image-container:hover .hover-image {
+          display: block;
+        }
+        .quote h2 {
+          font-size: 20px;
+        }
+        .quote img {
+          width: 20%;
+        }
       }
 
       /* ------ Styling desktop ------- */
 
-      @media only screen and (min-width: 800px) {
+      @media only screen and (min-width: 700px) {
         .banner {
-          background-color: #f3f3eb;
           padding: 5%;
-          display: grid;
-          grid-template-columns: 1fr 1fr;
+          background-color: #f3f3eb;
+          z-index: -1;
+          margin-top: 3%;
+        }
+        .banner p {
+          margin-right: 45%;
+          margin-top: -1em;
         }
 
         .thebar {
-          max-width: 90%;
+          max-width: 38%;
+          z-index: 1;
+          position: absolute;
+          margin-top: -27.5%;
+          margin-left: 56%;
         }
 
         .col_1_1 {
           display: grid;
           grid-template-columns: 1fr 1fr;
           padding: 5%;
-          margin: 0 auto;
           margin-bottom: 5%;
-          gap: 45px;
-          width: 1000px;
+          gap: 150px;
         }
 
         .quote {
@@ -152,10 +194,42 @@ max-width: 100%;
           grid-template-columns: 1fr 1fr 1fr 1fr;
           gap: 30px;
           max-width: 70%;
+          margin-bottom: 4%;
+          margin-top: -5%;
         }
 
         .grid_images {
           max-width: 100%;
+        }
+        .image-container {
+          position: relative;
+          width: 170px;
+          height: 140px;
+          margin: 4% 0% 0% 0%;
+          cursor: pointer;
+        }
+
+        .image-container img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+
+        .image-container img:hover {
+          opacity: 0;
+        }
+
+        .image-container .hover-image {
+          display: none;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        .image-container:hover .hover-image {
+          display: block;
         }
       }
 
@@ -167,6 +241,7 @@ max-width: 100%;
         font-style: normal;
         font-size: 45px;
         margin-bottom: 3%;
+        line-height: 1.5em;
       }
 
       h2 {
@@ -174,6 +249,7 @@ max-width: 100%;
         font-weight: 300;
         font-style: normal;
         font-size: 25px;
+        line-height: 1.5em;
         color: #ff0000;
         padding-left: 5%;
         padding-right: 5%;
