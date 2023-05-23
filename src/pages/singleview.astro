@@ -1,6 +1,111 @@
 ---
-
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 ---
-<main>
-    
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <title>Singleview</title>
+  </head>
+  <Header>
+  </Header>
+ 
+    <main>
+      <a href="listeview.astro" class="product">BACK</a>
+      <div class="grid2">
+        <div>
+          <img
+            src="public/rød.jpg"
+            alt="rød"
+            id="images"
+          />
+        </div>
+        <div>
+          <section class="purchaseBox">
+                <h1>Overskrift</h1>
+                <p class="price">Pris: $X</p>
+                <p class="description">Beskrivelse: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Vintage:</p>
+                <p>Grape(s):</p>
+                <p>Region:</p>
+                <p>Country:</p>
+                <p>Colour:</p>
+                <p>Type:</p>
+                <p>Size:</p>   
+            <a href="" class="btn">Add to basket</a>
+          </section>
+        </div>
+      </div>
 </main>
+      <Footer></Footer>
+<script>
+function changeImage(imageSrc) {
+    var mainImage = document.getElementById('main-image');
+    // mainImage.src = imageSrc;
+  }
+</script>
+<style>
+   body{
+    font-family: Poppins;
+   }
+img{width:50%;}
+.btn {
+  display: inline-block;
+  background: red;
+  color: white;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+}
+.btn:hover {
+  background: black;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 50px;
+}
+.grid2 img {
+  width: 100%;
+}
+.price {
+  font-weight: bold;
+}
+.product {
+  margin-left: 80px;
+  font-size: 10px;
+  margin-top: 20px;
+}
+.description {
+  margin-top: 10px;
+}
+
+/* Media Queries */
+    @media only screen and (max-width: 800px) {
+
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .row {
+    text-align: center;
+  }
+  .col-2 {
+    flex-basis: 100%;
+  }
+  .grid2 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+ 
+}
+</style>
