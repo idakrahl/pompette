@@ -1,6 +1,6 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
 
 export async function getStaticPaths() {
   const data = await fetch("https://bnppmezjjsymjjfbqyse.supabase.co/rest/v1/Pompette", {
@@ -38,15 +38,15 @@ const { wine } = Astro.props;
       <img src={`/public/${wine.picture}`} alt="rød" id="images" />
       <div>
         <section class="purchaseBox">
-          <h2 class="price">Price: {wine.price}</h2>
+          <h2 class="price">Price: {wine.price} kr</h2>
           <p class="description">{wine.text}</p>
-          <p>Vintage:{wine.vintage}</p>
+          <p>Vintage: {wine.vintage}</p>
           <p>Grape(s): {wine.grape}</p>
           <p>Region: {wine.region}</p>
           <p>Country: {wine.country}</p>
           <p>Colour: {wine.colour}</p>
           <p>Type: {wine.type}</p>
-          <p>Size: {wine.size}</p>
+          <p>Size: {wine.size} ml</p>
           <div class="image-container">
             <img class="hover" src="/add_knap_hover.svg" alt="instagram" />
             <img class="insta_knap" src="/add_knap.svg" alt="instagram" />
@@ -56,12 +56,12 @@ const { wine } = Astro.props;
     </div>
   </main>
   <Footer />
-  <script>
+  <!-- <script>
     function changeImage(imageSrc) {
       var mainImage = document.getElementById("main-image");
       // mainImage.src = imageSrc;
     }
-  </script>
+  </script> -->
   <style>
     body {
       font-family: Poppins;
@@ -69,11 +69,11 @@ const { wine } = Astro.props;
 
     h1 {
       color: red;
-      font-size: 45px;
+      font-size: 35px;
       line-height: 1.5em;
       margin-left: 2.5%;
-      margin-bottom: -2%;
-      margin-top: 0%;
+      margin-bottom: 0%;
+      margin-top: 2%;
       font-family: "athena", sans-serif;
     }
     #images {

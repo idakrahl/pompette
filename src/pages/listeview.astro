@@ -2,6 +2,13 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Card from "../components/Card.astro";
+
+const data = await fetch("https://bnppmezjjsymjjfbqyse.supabase.co/rest/v1/Pompette", {
+  method: "GET",
+  headers: {
+    apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJucHBtZXpqanN5bWpqZmJxeXNlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ0MTM5NDksImV4cCI6MTk5OTk4OTk0OX0.QKzx0IPHBKonSSjH8S7r8lllC8IldDTgaP7clAxevi4",
+  },
+}).then((response) => response.json());
 ---
 
 <html lang="en">
@@ -24,12 +31,7 @@ import Card from "../components/Card.astro";
         <p>Every month, we pick out our favorite flavors of each grape and share why we love it. That way, you know exactly which drink you should go for when you visit us.</p>
       </div>
       <img class="blomst_splash" src="/blomstersplash_red.png" alt="Image inside the wine bar" />
-
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {data.map((wine) => <Card link={"/wine/" + wine.id} picture={`/public/${wine.picture}`} picture2={`/public/${wine.picture2}`} name={wine.name} type={wine.type} love={wine.love} link={"/singleview/" + wine.slug} />)}
     </main>
     <Footer />
   </body>
