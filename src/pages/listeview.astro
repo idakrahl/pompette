@@ -31,7 +31,7 @@ const data = await fetch("https://bnppmezjjsymjjfbqyse.supabase.co/rest/v1/Pompe
         <p>Every month, we pick out our favorite flavors of each grape and share why we love it. That way, you know exactly which drink you should go for when you visit us.</p>
       </div>
       <img class="blomst_splash" src="/blomstersplash_red.png" alt="Image inside the wine bar" />
-      {data.map((wine) => <Card link={"/wine/" + wine.id} picture={`/public/${wine.picture}`} picture2={`/public/${wine.picture2}`} name={wine.name} type={wine.type} love={wine.love} link={"/singleview/" + wine.slug} />)}
+      {data.map((wine) => <Card link={"/wine/" + wine.id} picture={`/${wine.picture}`} picture2={`/${wine.picture2}`} name={wine.name} type={wine.type} love={wine.love} link={"/singleview/" + wine.slug} />)}
     </main>
     <Footer />
   </body>
