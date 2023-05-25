@@ -68,7 +68,9 @@ import Footer from "../components/Footer.astro";
     </main>
     <Footer />
   </body>
+
   <style>
+    /* ------------------ MOBILEFIRST ------------------ */
     @media only screen and (max-width: 700px) {
       /* ----- De roterende vinflasker ----- */
       .rotate-image {
@@ -147,7 +149,7 @@ import Footer from "../components/Footer.astro";
       .insta4 {
         width: 49%;
       }
-      /* ----- Go to Instagram knap ----- */
+      /* ----- 'Go to Instagram' knap ----- */
       .image-container {
         position: relative;
         width: 150px;
@@ -218,6 +220,8 @@ import Footer from "../components/Footer.astro";
         font-size: 14px;
       }
     }
+
+    /* ------------------ DESKTOP VIEW ------------------ */
     @media only screen and (min-width: 700px) {
       .grid {
         display: grid;
@@ -304,7 +308,7 @@ import Footer from "../components/Footer.astro";
         margin-right: 25%;
         line-height: 1.5em;
       }
-      /* ----- Go to Instagram knap ----- */
+      /* ----- 'Go to Instagram' knap ----- */
       .image-container {
         position: relative;
         width: 170px;
@@ -386,6 +390,7 @@ import Footer from "../components/Footer.astro";
       /* --------------------------------------- */
     }
   </style>
+
   <script>
     /* ----- Den roterende vinflaske 1 ----- */
     window.addEventListener("scroll", function () {
