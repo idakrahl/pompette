@@ -19,29 +19,29 @@ import Footer from "../components/Footer.astro";
       <div class="grid">
         <p class="aabningstider">Open Daily <br /> 12:00-00:00 <br /> <span class="nores"> No reservations</span></p>
 
-        <p class="no_res">No reservations</p>
+        <p class="no_res">Natural winebar and shop</p>
 
         <p class="adresse">Møllegade 3 <br /> 2200 København <br /> Denmark</p>
       </div>
       <div class="grid_1_5_1">
         <video class="hero-video" playsinline autoplay muted loop src="/forsidevideo.mp4"></video>
       </div>
-      <img id="my-image2" class="rotate-image2" src="/Pompette_pig2.png" alt="pompette_bottles" />
+      <img id="my-image2" class="rotate-image2" src="/Pompette_pig2.webp" alt="pompette_bottles" />
       <h1>“Natural wine <br /> for the people”</h1>
       <p class="brodtekst">We are a small wine shop and wine bar located in Nørrebro in Copenhagen. We opened in the summer of 2018. We hoped to create a space to bring people together to enjoy a thing we all cared about: Natural wine.</p>
-      <img id="my-image" class="rotate-image" src="/Pompette_pig 3.png" alt="pompette_bottles" />
+      <img id="my-image" class="rotate-image" src="/Pompette_pig 3.webp" alt="pompette_bottles" />
       <div class="grid_desktop">
         <div>
           <a target="_blank" href="https://www.instagram.com/pompettecph/">
             <div class="grid_1-1">
-              <img class="insta1" src="/insta1.png" alt="instagram" />
-              <img class="insta2" src="/insta2.png" alt="instagram" />
+              <img class="insta1" src="/insta1.webp" alt="instagram" />
+              <img class="insta2" src="/insta2.webp" alt="instagram" />
             </div>
           </a>
           <a target="_blank" href="https://www.instagram.com/pompettecph/">
             <div class="grid_1-1">
-              <img class="insta3" src="/insta3.png" alt="instagram" />
-              <img class="insta4" src="/insta4.png" alt="instagram" />
+              <img class="insta3" src="/insta3.webp" alt="instagram" />
+              <img class="insta4" src="/insta4.webp" alt="instagram" />
             </div>
           </a>
         </div>
@@ -93,14 +93,19 @@ import Footer from "../components/Footer.astro";
         font-size: 14px;
       }
       .no_res {
-        display: none;
+        grid-column: span 2;
+        grid-row: 1;
+        font-family: "athena", sans-serif;
+        font-weight: 100;
+        font-size: 22px;
+        margin: 3% 0% 3% 0%;
       }
       .aabningstider {
         grid-column: 1;
       }
       .adresse {
         grid-column: 2;
-        grid-row: 1;
+        grid-row: 2;
       }
       .hero-video {
         mask: url("/mask.svg") no-repeat center / contain;
@@ -221,10 +226,11 @@ import Footer from "../components/Footer.astro";
       }
       .no_res {
         margin-top: 7%;
+        font-family: "athena", sans-serif;
+        font-weight: 100;
+        font-size: 30px;
       }
-      .nores {
-        display: none;
-      }
+
       .aabningstider {
         margin-top: 5%;
       }
