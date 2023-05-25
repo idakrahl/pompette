@@ -34,8 +34,8 @@ const { wine } = Astro.props;
     <a href="/listeview" class="product"> ← BACK</a>
     <h1>{wine.name}</h1>
     <div class="grid2">
-      <img src={`/public/${wine.picture2}`} alt="rød1" id="images_lille" />
-      <img src={`/public/${wine.picture}`} alt="rød" id="images" />
+      <img src={`/${wine.picture2}`} alt="vin" id="images_lille" />
+      <img src={`/${wine.picture}`} alt="vin" id="images" />
       <div>
         <section class="purchaseBox">
           <h2 class="price">Price: {wine.price} kr</h2>
