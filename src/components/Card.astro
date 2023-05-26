@@ -1,5 +1,5 @@
 ---
-const { id, picture, picture2, name, type, love, link } = Astro.props;
+const { id, picture, picture2, name, type, love, link, text } = Astro.props;
 ---
 
 <html lang="en">
@@ -23,20 +23,15 @@ const { id, picture, picture2, name, type, love, link } = Astro.props;
         </div>
         <div class="beskrivelse">
           <p class="overskrift">{name}</p>
-          <div class="grid1-1">
-            <div>
-              <p>Why we love it:</p>
-              <p>{love}</p>
+          <p>Why we love it:</p>
+          <p>{love}</p>
+          <p class="text">{text}</p>
+          <a href={link}>
+            <div class="image-container">
+              <img class="hover" src="/../../../tell-me-more-knap-hover.webp" alt="tell me more" />
+              <img class="knap" src="/../../../tell-me-more-knap.webp" alt="tell me more" />
             </div>
-            <div>
-              <a href={link}>
-                <div class="image-container">
-                  <img class="hover" src="/../../../tell-me-more-knap-hover.webp" alt="tell me more" />
-                  <img class="knap" src="/../../../tell-me-more-knap.webp" alt="tell me more" />
-                </div>
-              </a>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
     </main>
@@ -145,7 +140,7 @@ const { id, picture, picture2, name, type, love, link } = Astro.props;
       position: relative;
       width: 170px;
       height: 140px;
-      margin: 45% 0% 10% -100%;
+      margin-top: 3%;
       cursor: pointer;
     }
 
@@ -170,6 +165,9 @@ const { id, picture, picture2, name, type, love, link } = Astro.props;
 
     .image-container:hover .hover-image {
       display: block;
+    }
+    .text {
+      margin-right: 30%;
     }
   }
   /* ------ Generel styling, skrifttyper osv. ------- */
