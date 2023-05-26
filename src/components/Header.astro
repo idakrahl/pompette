@@ -1,6 +1,6 @@
 <nav class="navbar">
   <a href="/">
-    <img src="/logo_roed.webp" alt="pompette" />
+    <img src="/logo_roed.webp" class="logo" alt="pompette" />
   </a>
   <ul class="nav-menu">
     <li class="nav-item">
@@ -20,7 +20,9 @@
         <button class="dropbtn"> <a href="/aboutus">About Us</a></button>
       </div>
     </li>
-    <li></li>
+    <li>
+      <img class="cart" src="/shopping_cart.svg" alt="" />
+    </li>
   </ul>
   <div class="hamburger">
     <span class="bar"></span>
@@ -30,11 +32,14 @@
 </nav>
 
 <style>
+  .cart {
+    weight: 100;
+  }
   .navbar {
     position: sticky;
     top: 0;
     background-color: white;
-    padding-left: 30px;
+    padding-left: 0px;
     z-index: 100;
   }
   nav {
@@ -42,7 +47,7 @@
     grid-template-columns: 5fr 3fr;
     padding: 2em;
   }
-  .navbar img {
+  .navbar .logo {
     width: 20%;
     margin-top: -2%;
   }
@@ -51,7 +56,6 @@
     display: flex;
     list-style: none;
     justify-content: space-between;
-    margin-right: 15%;
     margin-top: 3%;
   }
 
@@ -126,11 +130,11 @@
   }
   .nav-menu {
     display: grid;
-    grid-template-columns: 1fr 1.28fr 1fr;
+    grid-template-columns: 1fr 1.28fr 1fr 1fr;
   }
 
   @media only screen and (max-width: 700px) {
-    .navbar img {
+    .navbar .logo {
       width: 60%;
     }
     .nav-menu {
