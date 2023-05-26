@@ -1,31 +1,41 @@
 <footer>
-  <img src="/logo_sort.webp" alt="pompette" class="pompette_logo_black" />
+  <img src="/Pompette_pig 3.webp" alt="pompette" class="pompette_logo_black" />
   <p>
-    CONTACT US <br /> To get in touch, visit our contact page or write us at support@pompette.dk <br />
+    <strong>CONTACT US</strong><br /> To get in touch, visit our contact page or write us at support@pompette.dk <br />
+    <br />
     For employment opportunities, see our current vacancies
   </p>
   <p>
-    OPENING HOURS <br /> all day <br /> 12am - 12pm
+    <strong>OPENING HOURS</strong>
+    <br /> all day <br /> 12am - 12pm
     <br /><br />
-    NO RESERVATIONS
+    <strong>No Reservations</strong>
   </p>
 
-  <p>
-    SOCIALS <br />
-    <a target="_blank" href="https://www.instagram.com/pompettecph/">INSTAGRAM</a>
-    <br />
-    <a target="_blank" href="https://www.facebook.com/pompettecph">FACEBOOK</a>
-  </p>
+  <div>
+    <strong>SOCIALS</strong>
+    <div class="socials">
+      <a class="insta" target="_blank" href="https://www.instagram.com/pompettecph/"> <img src="/icon-instagram.svg" alt="instagram" /></a>
+      <a class="facebook" target="_blank" href="https://www.facebook.com/pompettecph"> <img src="/icon-facebook.svg" alt="facebook" /></a>
+    </div>
+  </div>
 </footer>
 
 <style>
+  .socials {
+    margin-top: 5%;
+  }
+  .insta:hover,
+  .facebook:hover {
+    opacity: 40%;
+  }
   hr {
     color: black;
     margin-bottom: 0%;
   }
   footer {
     display: grid;
-    grid-template-columns: 1.5fr 2fr 1fr 1fr;
+    grid-template-columns: 0.5fr 2fr 1fr 1fr;
     background-color: #f3f3eb;
     padding: 3em;
     font-family: century-gothic, sans-serif;
@@ -35,7 +45,7 @@
     line-height: 1.5em;
   }
   .pompette_logo_black {
-    width: 60%;
+    width: 120%;
   }
   a {
     color: black;
