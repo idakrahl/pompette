@@ -7,10 +7,10 @@
     </div>
     <ul class="menupunkter">
       <div class="dropdown">
-        <a id="shop">Shop ↓</a>
+        <li id="shop" class="menu-arrow">Shop ↓</li>
         <div class="sub-menu">
           <a href="/listeview">Wine</a>
-          <a href="/notwine">Not wine</a>
+          <a href="/notwine">Not Wine</a>
         </div>
       </div>
       <li><a href="/thebar">The Winebar</a></li>
@@ -34,11 +34,12 @@
       height: auto;
     }
     .menupunkter {
-      display: flex;
-      justify-content: end;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      justify-content: space-around;
       list-style: none;
       font-family: century-gothic, sans-serif;
-      margin: 2.5% 2% 0% 0%;
+      margin: 2.5% 0% 0% 45%;
     }
 
     .menupunkter a {
@@ -52,7 +53,19 @@
       height: auto;
     }
     .menupunkter li {
-      margin-left: 10%;
+      color: #ff0000;
+      font-size: 14px;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .sub-menu {
+      display: none;
+    }
+    .sub-menu.open {
+      display: flex;
+      flex-direction: column;
     }
 
     @media only screen and (max-width: 700px) {
@@ -62,4 +75,14 @@
       }
     }
   </style>
+  <script>
+    const arrowButton = document.querySelectorAll(".menu-arrow");
+    const subMenu = document.querySelector(".sub-menu");
+
+    arrowButton.forEach((el) =>
+      el.addEventListener("click", () => {
+        subMenu.classList.toggle("open");
+      })
+    );
+  </script>
 </nav>
