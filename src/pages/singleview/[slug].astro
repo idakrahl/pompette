@@ -41,13 +41,15 @@ const { wine } = Astro.props;
         <section class="purchaseBox">
           <h2 class="price">Price: {wine.price} kr</h2>
           <p class="description">{wine.text}</p>
-          <p>Vintage: {wine.vintage}</p>
-          <p>Grape(s): {wine.grape}</p>
-          <p>Region: {wine.region}</p>
-          <p>Country: {wine.country}</p>
-          <p>Colour: {wine.colour}</p>
-          <p>Type: {wine.type}</p>
-          <p>Size: {wine.size} ml</p>
+          <ul class="kategorier">
+            <li><strong>Vintage:</strong> {wine.vintage}</li>
+            <li><strong>Grape(s):</strong> {wine.grape}</li>
+            <li><strong> Region:</strong> {wine.region}</li>
+            <li><strong>Country:</strong> {wine.country}</li>
+            <li><strong>Colour:</strong> {wine.colour}</li>
+            <li><strong>Type:</strong> {wine.type}</li>
+            <li><strong>Size:</strong> {wine.size} ml</li>
+          </ul>
           <div class="image-container">
             <img class="hover" src="/../../../../add-knap-hover.webp" alt="add to baske" />
             <img class="insta_knap" src="/../../../../add-knap.webp" alt="add to baske" />
@@ -161,6 +163,9 @@ const { wine } = Astro.props;
     .image-container:hover .hover-image {
       display: block;
     }
+    .kategorier li {
+      margin-bottom: 2%;
+    }
 
     /* Media Queries */
 
@@ -169,9 +174,7 @@ const { wine } = Astro.props;
         margin-left: 2%;
         margin-bottom: -7%;
       }
-      .product {
-        margin-left: 10px;
-      }
+
       .grid2 {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -188,11 +191,18 @@ const { wine } = Astro.props;
         margin-left: 2%;
       }
       .description {
-        margin-right: -200px;
+        margin-right: -250px;
       }
       .image-container {
         width: 140px;
         height: 110px;
+      }
+      .kategorier li {
+        margin-bottom: 5%;
+        margin-right: -250px;
+      }
+      .price {
+        margin-right: -250px;
       }
     }
   </style>
