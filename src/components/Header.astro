@@ -1,7 +1,9 @@
 <nav class="navbar">
-  <a href="/">
-    <img src="/logo_roed.webp" class="logo" alt="pompette" />
-  </a>
+  <div class="logo">
+    <a href="/">
+      <img src="/logo_roed.webp" alt="pompette" />
+    </a>
+  </div>
   <ul class="nav-menu">
     <li class="nav-item">
       <div class="dropdown">
@@ -48,10 +50,14 @@
     grid-template-columns: 5fr 3fr;
     padding: 2em;
   }
-  .navbar .logo {
-    width: 20%;
+  .logo {
     margin-top: -2%;
     margin-left: 2%;
+    flex-shrink: 0;
+  }
+  .logo img {
+    max-width: 160px;
+    height: auto;
   }
 
   ul {
@@ -136,8 +142,9 @@
   }
 
   @media only screen and (max-width: 700px) {
-    .navbar .logo {
-      width: 60%;
+    .logo img {
+      max-width: 120px;
+      height: auto;
     }
     .nav-menu {
       position: fixed;
