@@ -13,7 +13,7 @@
       </div>
     </li>
     <li class="nav-item">
-      <a href="/thebar">The Winebar</a>
+      <a class="winebar" href="/thebar">The Winebar</a>
     </li>
     <li class="nav-item">
       <div class="dropdown">
@@ -57,7 +57,7 @@
   a {
     text-decoration: none;
     color: #ff0000;
-    font-family: "Poppins", sans-serif;
+    font-family: century-gothic, sans-serif;
     font-weight: 300;
     font-size: 16px;
     line-height: 1.5;
@@ -87,8 +87,6 @@
 
   .sub-menu {
     display: none;
-    text-align: left;
-    margin: 5% 0% 0% 0%;
   }
   .sub-menu a {
     color: rgb(148, 148, 148);
@@ -100,7 +98,7 @@
   .sub-menu.open {
     display: flex;
     flex-direction: column;
-    color: $darkblue-headingtext;
+    margin-bottom: -25%;
   }
 
   .menu-arrow:hover {
@@ -121,6 +119,13 @@
   }
   #shop {
     cursor: pointer;
+  }
+  .winebar {
+    position: sticky;
+  }
+  .nav-menu {
+    display: grid;
+    grid-template-columns: 1fr 1.28fr 1fr;
   }
   @media only screen and (max-width: 700px) {
     img {
