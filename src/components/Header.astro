@@ -9,14 +9,19 @@
       <div class="dropdown">
         <li id="shop" class="menu-arrow">Shop ↓</li>
         <div class="sub-menu">
-          <a href="/listeview">Wine</a>
-          <a href="/notwine">Not Wine</a>
+          <a class="nav-link" href="/listeview">Wine</a>
+          <a class="nav-link" href="/notwine">Not Wine</a>
         </div>
       </div>
-      <li><a href="/thebar">The Winebar</a></li>
-      <li><a href="/aboutus">About Us</a></li>
+      <li><a class="nav-link" href="/thebar">The Winebar</a></li>
+      <li><a class="nav-link" href="/aboutus">About Us</a></li>
       <li><img src="/cart-red.webp" alt="" /></li>
     </ul>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
   </div>
   <style>
     .navbar {
@@ -67,11 +72,35 @@
       display: flex;
       flex-direction: column;
     }
-
+    .hamburger {
+      display: none;
+    }
+    .bar {
+      display: block;
+      width: 35px;
+      height: 2px;
+      margin: 7px auto;
+      -webkit-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+      background-color: #ff0000;
+    }
     @media only screen and (max-width: 700px) {
       .logo img {
         max-width: 120px;
         height: auto;
+      }
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+      .hamburger.active .bar:nt-child(2) {
+        opacity: 0;
+      }
+      .hamburger.active .bar:nt-child(1) {
+        transform: translateY(-8) rotate(-45deg);
+      }
+      .hamburger.active .bar:nt-child(3) {
+        transform: translateY(8) rotate(45deg);
       }
     }
   </style>
@@ -84,5 +113,23 @@
         subMenu.classList.toggle("open");
       })
     );
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".menupunkter");
+
+    hamburger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hamburger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll(".nav-link");
+
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
   </script>
 </nav>
