@@ -1,222 +1,59 @@
 <nav class="navbar">
-  <div class="logo">
-    <a href="/">
-      <img src="/logo_roed.webp" alt="pompette" />
-    </a>
+  <div class="nav_grid">
+    <div class="logo">
+      <a href="/">
+        <img src="/logo_roed.webp" alt="pompette" />
+      </a>
+    </div>
+    <ul class="menupunkter">
+      <li><a href="/">Shop</a></li>
+      <li><a href="/thebar">The Winebar</a></li>
+      <li><a href="/aboutus">About Us</a></li>
+      <li><img src="/cart-red.webp" alt="" /></li>
+    </ul>
   </div>
-  <ul class="nav-menu">
-    <li class="nav-item">
-      <div class="dropdown">
-        <a id="shop" class="menu-arrow">Shop ↓</a>
-        <div class="sub-menu">
-          <a href="/listeview">Wine</a>
-          <a href="/notwine">Not wine</a>
-        </div>
-      </div>
-    </li>
-    <li class="nav-item">
-      <a class="winebar" href="/thebar">The Winebar</a>
-    </li>
-    <li class="nav-item">
-      <div class="dropdown">
-        <button class="dropbtn"> <a href="/aboutus">About Us</a></button>
-      </div>
-    </li>
-    <li>
-      <img class="cart" src="/cart_red.svg" alt="" />
-    </li>
-  </ul>
-  <div class="hamburger">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </div>
-</nav>
-
-<style>
-  .cart {
-    width: 30%;
-    margin-top: -2%;
-    cursor: pointer;
-  }
-  .navbar {
-    position: sticky;
-    background-color: white;
-    padding-left: 0px;
-    z-index: 100;
-  }
-  nav {
-    display: grid;
-    grid-template-columns: 5fr 3fr;
-    padding: 2em;
-  }
-  .logo {
-    margin-top: -2%;
-    margin-left: 2%;
-    flex-shrink: 0;
-  }
-  .logo img {
-    max-width: 160px;
-    height: auto;
-  }
-
-  ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-    margin-top: 3%;
-  }
-
-  a {
-    text-decoration: none;
-    color: #ff0000;
-    font-family: century-gothic, sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  a:hover {
-    color: black;
-  }
-  /* Dropdown Button */
-  .grid_1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-  .dropbtn {
-    color: #ff0000;
-    font-family: century-gothic, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    border: none;
-    background-color: white;
-    font-size: 16px;
-  }
-
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-
-  .sub-menu {
-    display: none;
-  }
-  .sub-menu a {
-    color: rgb(148, 148, 148);
-  }
-  .sub-menu a:hover {
-    color: rgb(80, 80, 80);
-  }
-
-  .sub-menu.open {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: -25%;
-  }
-
-  .menu-arrow:hover {
-    color: black;
-  }
-  .hamburger {
-    display: none;
-  }
-
-  .bar {
-    display: block;
-    width: 35px;
-    height: 2px;
-    margin: 7px auto;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
-    background-color: #ff0000;
-  }
-  #shop {
-    cursor: pointer;
-  }
-  .winebar {
-    position: sticky;
-  }
-  .nav-menu {
-    display: grid;
-    grid-template-columns: 1fr 1.28fr 1fr 1fr;
-  }
-
-  @media only screen and (max-width: 700px) {
+  <style>
+    .navbar {
+      padding: 1em;
+    }
+    .nav_grid {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+    }
+    .logo {
+      flex-shrink: 0;
+    }
     .logo img {
-      max-width: 120px;
+      max-width: 160px;
       height: auto;
     }
-    .nav-menu {
-      position: fixed;
-      left: -150%;
-      top: 1rem;
-      flex-direction: column;
-      background-color: #f3f3eb;
-      width: 100%;
-      text-align: center;
-      transition: 0.3s;
-    }
-    .dropbtn {
-      background-color: #f3f3eb;
-    }
-    .nav-menu.active {
-      left: 0;
+    .menupunkter {
+      display: flex;
+      justify-content: end;
+      list-style: none;
+      font-family: century-gothic, sans-serif;
+      margin: 2.5% 2% 0% 0%;
     }
 
-    .nav-item {
-      margin: 2rem 5rem 1rem 0rem;
+    .menupunkter a {
+      text-decoration: none;
+      color: #ff0000;
+      font-size: 14px;
+    }
+    .menupunkter img {
+      flex-shrink: 0;
+      max-width: 25px;
+      height: auto;
+    }
+    .menupunkter li {
+      margin-left: 10%;
     }
 
-    .hamburger {
-      display: block;
-      cursor: pointer;
-      margin-top: 5%;
-      margin-left: 50%;
+    @media only screen and (max-width: 700px) {
+      .logo img {
+        max-width: 120px;
+        height: auto;
+      }
     }
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-      transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-      transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .sub-menu {
-      display: none;
-      text-align: center;
-      margin: 5% 0% 0% -10%;
-    }
-  }
-</style>
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  hamburger.addEventListener("click", mobileMenu);
-
-  function mobileMenu() {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  }
-
-  const navLink = document.querySelectorAll(".nav-link");
-
-  navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-  function closeMenu() {
-    hamburger.classList.remove("active");
-    navMenu.classList.remove("active");
-  }
-  const arrowButton = document.querySelectorAll(".menu-arrow");
-  const subMenu = document.querySelector(".sub-menu");
-
-  arrowButton.forEach((el) =>
-    el.addEventListener("click", () => {
-      subMenu.classList.toggle("open");
-    })
-  );
-</script>
+  </style>
+</nav>
