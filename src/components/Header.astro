@@ -38,9 +38,11 @@
     cursor: pointer;
   }
   .navbar {
-    position: sticky;
     background-color: white;
     padding-left: 0px;
+    z-index: 100;
+    position: sticky;
+    top: 0;
     z-index: 100;
   }
   nav {
@@ -109,7 +111,7 @@
   .sub-menu.open {
     display: flex;
     flex-direction: column;
-    margin-bottom: -25%;
+    margin-bottom: -30%;
   }
 
   .menu-arrow:hover {
@@ -131,15 +133,18 @@
   #shop {
     cursor: pointer;
   }
-  .winebar {
-    position: sticky;
-  }
+
   .nav-menu {
     display: grid;
     grid-template-columns: 1fr 1.28fr 1fr 1fr;
   }
 
   @media only screen and (max-width: 700px) {
+    .cart {
+      width: 10%;
+      margin-top: 0%;
+      cursor: pointer;
+    }
     .logo img {
       max-width: 120px;
       height: auto;
@@ -147,23 +152,22 @@
     .nav-menu {
       position: fixed;
       left: -150%;
-      top: 1rem;
-      flex-direction: column;
+      top: -1rem;
+      padding: 6rem 0rem 3rem 0rem;
       background-color: #f3f3eb;
       width: 100%;
       text-align: center;
       transition: 0.3s;
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1.2fr 1fr 1fr 1fr;
     }
-    .dropbtn {
-      background-color: #f3f3eb;
-    }
-    .nav-menu.active {
-      left: 0;
+    li {
+      margin-bottom: 9%;
     }
 
-    .nav-item {
-      margin: 2rem 5rem 1rem 0rem;
+    .nav-menu.active {
+      left: 0;
     }
 
     .hamburger {
@@ -187,7 +191,10 @@
     .sub-menu {
       display: none;
       text-align: center;
-      margin: 5% 0% 0% -10%;
+    }
+    .sub-menu.open {
+      display: flex;
+      flex-direction: column;
     }
   }
 </style>
