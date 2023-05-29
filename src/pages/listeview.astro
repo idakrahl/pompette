@@ -35,7 +35,7 @@ function getFirstNChars(str, length) {
         <p>Every month, we pick out our favorite flavors of each grape and share why we love it. That way, you know exactly which drink you should go for when you visit us.</p>
       </div>
       <img class="blomst_splash" src="/blomstersplash_red.webp" alt="Image inside the wine bar" />
-      {data.map((wine) => <Card link={"/wine/" + wine.id} picture={`/${wine.picture}`} picture2={`/${wine.picture2}`} name={wine.name} type={wine.type} text={getFirstNChars(wine.text, 200) + "..."} love={wine.love} link={"/singleview/" + wine.slug} />)}
+      {data.map((wine) => <Card picture={`/${wine.picture}`} picture2={`/${wine.picture2}`} name={wine.name} type={wine.type} text={getFirstNChars(wine.text, 200) + "..."} love={wine.love} link={"/singleview/" + wine.slug} />)}
     </main>
     <Footer />
   </body>
